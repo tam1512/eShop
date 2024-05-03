@@ -21,11 +21,11 @@ class Database {
             $query = $statement->execute($data);
          }
       }catch(Exception $e){
-         // echo $e->getMessage();
+         throw new \Error($e->getMessage());
          // exit();
-         errorResponse(500, 'Server Error', [
-            'error' => $e->getMessage()
-         ]);
+         // errorResponse(500, 'Server Error', [
+         //    'error' => $e->getMessage()
+         // ]);
       }
 
       if($statementStatus && $query) {

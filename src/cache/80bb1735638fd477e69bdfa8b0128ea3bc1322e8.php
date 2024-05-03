@@ -4,7 +4,7 @@
    <ul class="sidebar-nav" id="sidebar-nav">
 
    <li class="nav-item">
-      <a class="nav-link " href="{{_WEB_HOST_ROOT}}/admin">
+      <a class="nav-link " href="<?php echo e(_WEB_HOST_ROOT); ?>/admin">
          <i class="bi bi-grid"></i>
          <span>Dashboard</span>
       </a>
@@ -16,12 +16,12 @@
       </a>
       <ul id="user-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          <li>
-            <a href="{{_WEB_HOST_ROOT}}/admin/user">
+            <a href="<?php echo e(_WEB_HOST_ROOT); ?>/admin/user">
                <i class="bi bi-circle"></i><span>User</span>
             </a>
          </li>
          <li>
-            <a href="{{_WEB_HOST_ROOT}}/admin/admin">
+            <a href="<?php echo e(_WEB_HOST_ROOT); ?>/admin/admin">
                <i class="bi bi-circle"></i><span>Admin</span>
             </a>
          </li>
@@ -174,4 +174,4 @@
    </ul>
 
 </aside>
-<!-- End Sidebar-->
+<!-- End Sidebar--><?php /**PATH E:\program File\xampp\htdocs\eshop\src\views/admin/blocks/sidebar.blade.php ENDPATH**/ ?>

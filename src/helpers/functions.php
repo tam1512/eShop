@@ -86,9 +86,6 @@ function csrf_token(): ?string
 
     return null;
 }
-// function getEnv($dotenv) {
-//    return $_ENV[$dotenv];
-// }
 
 function getPrefixLink() {
     //xử lý lấy ra web root
@@ -107,4 +104,39 @@ function getPrefixLink() {
 function view($path, $data = []) {
     $blade = new Blade(_PATH_VIEW, _PATH_CACHE);
     return $blade->render($path, $data);
+}
+
+function data($key='', $value='') {
+    if(!empty($key)) {
+        if(!empty($value)) {
+            $_SESSION[$key] = $value;
+            return true;
+        } else {
+            if(isset($_SESSION[$key]))
+            return $_SESSION[$key];
+        }
+    }
+    return false;
+}
+
+function delete($key='') {
+    if(!empty($key)) {
+        if(isset($_SESSION[$key])) {
+            unset($_SESSION[$key]);
+            return true;
+        } 
+        return false;
+    } else {
+        session_destroy();
+        return true;
+    }
  }
+
+//tạo => tương tự data, gọi => tự động xóa 
+function flash($key='', $value='') {
+    $flashData = data($key, $value);
+    if(empty($value)) {
+       delete($key);
+       return $flashData;
+    }
+}

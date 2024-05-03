@@ -1,7 +1,6 @@
 <?php
-use App\Middlewares\AuthMiddleware;
-use App\Middlewares\AuthorMiddleware;
-use App\Middlewares\RateLimitMiddleware;
+use App\Middlewares\Admin\Authentication;
+use App\Middlewares\Admin\Authorization;
 use Pecee\SimpleRouter\SimpleRouter as Route;
 
 Route::group(['prefix' => '', 'namespace' => 'App\Controllers'], function() {
@@ -15,7 +14,13 @@ Route::group(['prefix' => '', 'namespace' => 'App\Controllers'], function() {
    Route::get('/contact', 'contact@index');
 });
 
-Route::group(['prefix'=>'/admin', 'namespace' => 'App\Controllers\Admin'], function() {
+Route::group(['prefix'=>'/admin', 'namespace' => 'App\Controllers\Admin', 'middleware' => [Authentication::class]], function() {
    Route::get('auth/login', 'auth@login');
-   Route::get('auth/register', 'auth@register');
+   Route::post('auth/login', 'auth@handleLogin'); 
+   Route::group(['middleware'=>Authorization::class], function() {
+      Route::get('/', 'dashboard@index');
+      Route::get('/profile', 'user@profile');
+      Route::get('/user', 'user@user');
+      Route::get('/user/admin', 'user@admin');
+   });
 });

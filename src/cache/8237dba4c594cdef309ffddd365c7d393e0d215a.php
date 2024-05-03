@@ -3,7 +3,7 @@
 
    <div class="d-flex align-items-center justify-content-between">
    <a href="index.html" class="logo d-flex align-items-center">
-      <img src="{{_WEB_HOST_ROOT_ADMIN}}/assets/img/logo.png" alt="">
+      <img src="<?php echo e(_WEB_HOST_ROOT_ADMIN); ?>/assets/img/logo.png" alt="">
       <span class="d-none d-lg-block">NiceAdmin</span>
    </a>
    <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -118,7 +118,7 @@
 
          <li class="message-item">
             <a href="#">
-               <img src="{{_WEB_HOST_ROOT_ADMIN}}/assets/img/messages-1.jpg" alt="" class="rounded-circle">
+               <img src="<?php echo e(_WEB_HOST_ROOT_ADMIN); ?>/assets/img/messages-1.jpg" alt="" class="rounded-circle">
                <div>
                <h4>Maria Hudson</h4>
                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -132,7 +132,7 @@
 
          <li class="message-item">
             <a href="#">
-               <img src="{{_WEB_HOST_ROOT_ADMIN}}/assets/img/messages-2.jpg" alt="" class="rounded-circle">
+               <img src="<?php echo e(_WEB_HOST_ROOT_ADMIN); ?>/assets/img/messages-2.jpg" alt="" class="rounded-circle">
                <div>
                <h4>Anna Nelson</h4>
                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -146,7 +146,7 @@
 
          <li class="message-item">
             <a href="#">
-               <img src="{{_WEB_HOST_ROOT_ADMIN}}/assets/img/messages-3.jpg" alt="" class="rounded-circle">
+               <img src="<?php echo e(_WEB_HOST_ROOT_ADMIN); ?>/assets/img/messages-3.jpg" alt="" class="rounded-circle">
                <div>
                <h4>David Muldon</h4>
                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -169,21 +169,21 @@
       <li class="nav-item dropdown pe-3">
 
          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-         <img src="{{$user['avatar'] ?? _WEB_HOST_ROOT_ADMIN.'/assets/img/no-avatar.png'}}" alt="Profile" class="rounded-circle">
-         <span class="d-none d-md-block dropdown-toggle ps-2">{{$user['fullname']}}</span>
+         <img src="<?php echo e($user['avatar'] ?? _WEB_HOST_ROOT_ADMIN.'/assets/img/no-avatar.png'); ?>" alt="Profile" class="rounded-circle">
+         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo e($user['fullname']); ?></span>
          </a><!-- End Profile Iamge Icon -->
 
          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
          <li class="dropdown-header">
-            <h6>{{$user['fullname']}}</h6>
-            <span>{{$user['job']}}</span>
+            <h6><?php echo e($user['fullname']); ?></h6>
+            <span><?php echo e($user['job']); ?></span>
          </li>
          <li>
             <hr class="dropdown-divider">
          </li>
 
          <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{_WEB_HOST_ROOT.'/admin/profile'}}">
+            <a class="dropdown-item d-flex align-items-center" href="<?php echo e(_WEB_HOST_ROOT.'/admin/profile'); ?>">
                <i class="bi bi-person"></i>
                <span>My Profile</span>
             </a>
@@ -193,7 +193,7 @@
          </li>
 
          <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{_WEB_HOST_ROOT.'/admin/profile'}}">
+            <a class="dropdown-item d-flex align-items-center" href="<?php echo e(_WEB_HOST_ROOT.'/admin/profile'); ?>">
                <i class="bi bi-gear"></i>
                <span>Account Settings</span>
             </a>
@@ -206,7 +206,7 @@
          </li>
 
          <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{_WEB_HOST_ROOT.'/admin/auth/logout'}}">
+            <a class="dropdown-item d-flex align-items-center" href="<?php echo e(_WEB_HOST_ROOT.'/admin/auth/logout'); ?>">
                <i class="bi bi-box-arrow-right"></i>
                <span>Sign Out</span>
             </a>
@@ -218,4 +218,4 @@
    </ul>
    </nav><!-- End Icons Navigation -->
 
-</header><!-- End Header -->
+</header><!-- End Header --><?php /**PATH E:\program File\xampp\htdocs\eshop\src\views/admin/blocks/header.blade.php ENDPATH**/ ?>

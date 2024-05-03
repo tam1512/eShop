@@ -19,8 +19,7 @@ class Connection {
                self::$conn = new PDO($dsn, $configs['dbUser'], $configs['dbPass'], $options);
          }
       } catch (Exception $e) {
-         echo $e->getMessage();
-         exit();
+         throw new \Error($e->getMessage());
       }
    }
 

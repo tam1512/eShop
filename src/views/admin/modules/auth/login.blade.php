@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+  <title>{{$pageTitle}}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -64,28 +64,28 @@
                     <p class="text-center small">Enter your email & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3" method="post">
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Email</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" name="email" class="form-control" id="yourEmail" required>
-                        <div class="invalid-feedback">Please enter your Email.</div>
+                        <input type="email" name="email" class="form-control{{!empty($errors['email']) ? ' error_input' : false}}" id="yourEmail" value="{{!empty($old['email']) ? $old['email'] : false}}">
+                        {!!!empty($errors['email']) ? '<div class="error">'.$errors['email'].'</div>' : false!!}
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
+                      <input type="password" name="password" class="form-control{{!empty($errors['email']) ? ' error_input' : false}}" id="yourPassword">
+                      {!!!empty($errors['password']) ? '<div class="error">'.$errors['password'].'</div>' : false!!}
                     </div>
                     <div class="col-12 mt-4">
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="{{_WEB_HOST_ROOT}}/admin/auth/register">Create an account</a></p>
-                    </div>
+                    </div> -->
                   </form>
 
                 </div>
@@ -121,7 +121,9 @@
   <script src="{{_WEB_HOST_ROOT_ADMIN}}/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+  <script src="{{_WEB_HOST_ROOT_ADMIN}}/assets/js/jquery.min.js"></script>
   <script src="{{_WEB_HOST_ROOT_ADMIN}}/assets/js/main.js"></script>
+  <script src="{{_WEB_HOST_ROOT_ADMIN}}/assets/js/custom.js"></script>
 
 </body>
 

@@ -1,13 +1,13 @@
 {
-    "name": "app/restful_api",
-    "description": "first restful api for me",
+    "name": "app/e_shop",
+    "description": "WEB SITE ECOMERCE MVC",
     "type": "project",
     "autoload": {
         "psr-4": {
             "App\\": "src/",
             "System\\": "./"
         },
-        "files" : ["src/helpers/functions.php", "src/helpers/response.php", "src/routes/web.php", "src/helpers/cors.php"]
+        "files" : ["src/helpers/functions.php", "src/routes/web.php", "src/helpers/cors.php"]
     },
     "authors": [
         {

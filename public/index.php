@@ -1,4 +1,6 @@
 <?php 
+use System\Core\CustomException;
+session_start();
 define("_WEB_PATH_ROOT", __DIR__);
 define("_PATH_VIEW", dirname(__DIR__).'/src/views');
 define("_PATH_CACHE", dirname(__DIR__).'/src/cache');
@@ -10,5 +12,6 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 use Pecee\SimpleRouter\SimpleRouter as Route; 
+new CustomException;
 //Start the routing
 Route::start();   
